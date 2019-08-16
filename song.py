@@ -17,7 +17,7 @@ if __name__ == '__main__':
     f = open("songs.txt", "r")
 
     if not f.mode == 'r':
-        print "Failed to open songs.txt, please make sure it exists"
+        print ("Failed to open songs.txt, please make sure it exists")
         exit(-1)
 
     for line in f.readlines():
@@ -39,10 +39,9 @@ if __name__ == '__main__':
         # audio = audio[-1]
 
 
-
         def mycb(total, recvd, ratio, rate, eta):
-            print recvd / 1024, "kb Received out of ", total / 1024, "kb - ", '{0:3.1f}'.format(
-                ratio * 100), " ", '{0:3.1f}'.format(eta), " Seconds left"
+            print (recvd / 1024, "kb Received out of ", total / 1024, "kb - ", '{0:3.1f}'.format(
+                ratio * 100), " ", '{0:3.1f}'.format(eta), " Seconds left")
 
         audio.download(callback=mycb)
 
