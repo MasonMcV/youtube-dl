@@ -2,4 +2,6 @@
 venv
 venv/*
 .idea/*
-
+*.webm
+*.temp
+api_key.txt
