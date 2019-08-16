@@ -51,7 +51,10 @@ if __name__ == '__main__':
 
         print (video.title.split(' - ')[1], video.title.split(' - ')[0], video.published, video.thumb)
 
-        file.export(video.title + '.' + "mp3", format='mp3', tags={
+        if not os.path.exists("songs"):
+            os.mkdir("songs")
+
+        file.export("songs/" + video.title + '.' + "mp3", format='mp3', tags={
             "title": removeNonAscii(video.title.split(' - ')[1]),
             "artist": removeNonAscii(video.title.split(' - ')[0]),
             'year': video.published[:4]
