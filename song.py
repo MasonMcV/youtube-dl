@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     for line in f.readlines():
         url = line.split(' ')
-        print url
+        print (url)
 
         if url[0][0] == '#':
             continue
